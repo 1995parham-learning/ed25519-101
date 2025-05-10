@@ -9,9 +9,9 @@ def main():
     public_key = private_key.public_key()
 
     b = private_key.private_bytes_raw()
-    print(f'private key: {base64.b64encode(b)}')
+    print(f"private key: {base64.b64encode(b)}")
     b = public_key.public_bytes_raw()
-    print(f'public key: {base64.b64encode(b)}')
+    print(f"public key: {base64.b64encode(b)}")
 
     now = time.time_ns()
     print(f"now: {now}")
