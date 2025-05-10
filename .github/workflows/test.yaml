@@ -1,0 +1,17 @@
+---
+name: ci
+on: push
+
+jobs:
+  test-python:
+    name: test python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          activate-environment: true
+      - run: uv sync --dev -v
+      - run: mypy .
+      - run: ruff check
+      - run: ruff format --check
